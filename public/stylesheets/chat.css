@@ -24,4 +24,14 @@ body {
     border-radius: 10px;
     padding: 10px;
     font-size: 14px;
+    font-family: 'Courier';
+    opacity: 0.75;
+}
+
+.message-time {
+    margin-top: 4px;
+    float: right;
+    font-size: 10px;
+    color: #ff0019;
+    font-family: 'Times New Roman';
 }

@@ -14,12 +14,13 @@ public class FeedService {
     public FeedResponse getFeedQuery(String query) {
         FeedResponse feedResponseObject = new FeedResponse();
         try {
-            WSRequest feedReqest = WS.url("https://news.google.com/news");
-            CompletionStage<WSResponse> responsepromise = feedReqest
-                    .setQueryParameter("query", query)
-                    .setQueryParameter("output", "rss")
-                    .get();
-            Document response = responsepromise.thenApply(WSResponse::asXml).toCompletableFuture().get();
+           WSRequest feedRequest = WS.url("https://news.google.com/news");
+          CompletionStage<WSResponse> responsePromise = feedRequest
+                  .setQueryParameter("q", query)
+                  .setQueryParameter("output", "rss")
+                  .get();
+          Document response = responsePromise.thenApply(WSResponse::asXml).toCompletableFuture().get();
+           
             Node item=response.getFirstChild().getFirstChild().getChildNodes().item(10);
              feedResponseObject.title=item.getChildNodes().item(0).getFirstChild().getNodeValue();
             feedResponseObject.description=item.getChildNodes().item(4).getFirstChild().getNodeValue();
