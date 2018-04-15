@@ -55,8 +55,10 @@ public class MessageActor extends UntypedActor {
             messageObject.sender = BOT;
             messageObject.feedResponse = feedResponse;
             out.tell(objectMapper.writeValueAsString(messageObject), self());
-
-
+        } else {
+            messageObject.text = "Input is invalid";
+            messageObject.sender = USER;
+            out.tell(objectMapper.writeValueAsString(messageObject), self());
         }
 
 
