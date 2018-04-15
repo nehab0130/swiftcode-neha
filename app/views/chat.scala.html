@@ -13,7 +13,7 @@
         <md-content id="message-pane" layout="column" flex="90">
             <div ng-repeat="msg in messages" layout="column" layout-align="{{ msg.sender=='BOT' ? 'start start' : 'start end'}}">
                 <md-card class="message-card" ng-style=" msg.sender == 'BOT' ? 
-                {'background-color': '#04f7ce'} : {'background-color':'#b884f4'}">
+                {'background-color': '#04f7ce',color:'#9400ff'} : {'background-color':'#b884f4' ,color:'#0400ff'}">
                     <span>{{msg.text}}</span>
                 </md-card>
             </div>
@@ -25,7 +25,7 @@
                     <input ng-model="userMessage">
                 </md-input-container>
             </form>
-            <md-button flex="none" class="md-fab md-accent" layout="row" layout-aling="center center">
+            <md-button flex="none" class="md-accent" layout="row" layout-aling="center center">
                 <i class="material-icons">send</i></md-button>
         </md-card>
     </md-card>

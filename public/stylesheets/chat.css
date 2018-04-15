@@ -11,7 +11,8 @@ body {
 }
 
 #message-pane {
-    background-color: #00030a;
+    background-image: url(https://www.colourbox.com/preview/7612473-colorful-space-shot-of-milky-way-galaxy-with-stars-and-space-dust.jpg);
+    background-repeat: no-repeat;
 }
 
 .material-icons {
